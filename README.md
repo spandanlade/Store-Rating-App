@@ -141,6 +141,8 @@ backend/db/connection.js
 
 Set your local MySQL credentials before running the project.
 
+**import database database.sql and name it store_rating**
+
 ---
 
 ## Roles
