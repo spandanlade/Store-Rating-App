@@ -84,8 +84,6 @@ router.get("/admin/dashboard", verifyToken, isAdmin, (req, res)=>{
                 if(err){
                     return res.status(500).json({message: "Database error", err});
                 }
-                console.log(ratingResult);
-
                 res.json({
                     totalUsers: userResult[0].totalUsers,
                     totalStores: storeResult[0].totalStores,
@@ -112,9 +110,7 @@ router.get("/admin/users", verifyToken, isAdmin, (req, res)=>{
 
 // To get users filter by name or email or address or role
 router.get("/admin/users/filter",verifyToken, isAdmin, (req, res)=>{
-    console.log(req.query);
     const {name, email, address, role, sort, order} = req.query;
-    
     
     let sql =`select id, name, email, address, role from users where 1=1`;
 
